@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Book Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ currentBook.author }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ currentBook.title }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ currentBook.published }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ currentBook.publisher }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ currentBook.pages }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ currentBook.description }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ currentBook.website }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button
+    color="success"
+    class="ion-float-right"
+    disabled="{{ !currentBook.isAvailable }}"
+  >
+    Borrow</ion-button
+  >
+  {{ text }}
+</ion-content>

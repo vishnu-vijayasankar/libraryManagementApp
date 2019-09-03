@@ -1,0 +1,7 @@
+{
+  "name": "libraryManagementApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

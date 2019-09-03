@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Read Me!!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionChange)="setFilteredItems()"
+  ></ion-searchbar>
+
+  <ion-list>
+    <ion-item
+      *ngFor="let book of bookDetailsTemp; let i = index"
+      (click)="showDetails(i)"
+    >
+      {{ book.title }} -- {{ book.author }}
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-fab class="scanNowBtn" (click)="scanBook()">
+  <ion-fab-button>
+    <ion-icon name="qr-scanner"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
