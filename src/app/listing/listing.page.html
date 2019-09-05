@@ -34,9 +34,17 @@
   <ion-button
     color="success"
     class="ion-float-right"
-    disabled="{{ !currentBook.isAvailable }}"
+    *ngIf="currentBook.isAvailable"
+    (click)="bookBorrow()"
   >
     Borrow</ion-button
   >
-  {{ text }}
+  <ion-button
+    color="danger"
+    class="ion-float-right"
+    *ngIf="!currentBook.isAvailable"
+    (click)="bookReturn()"
+  >
+    Return</ion-button
+  >
 </ion-content>

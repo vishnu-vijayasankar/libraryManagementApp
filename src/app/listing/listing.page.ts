@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
 import { Storage } from '@ionic/storage';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-listing',
@@ -11,17 +11,22 @@ import { AlertController } from '@ionic/angular';
 })
 export class ListingPage implements OnInit {
   currentBook: any;
+  allBookData: any;
   text: String;
 
   constructor(
     public shared: SharedService,
     public storage: Storage,
     private qrScanner: QRScanner,
-    public alertController: AlertController
+    public alertController: AlertController,
+    public navController: NavController
   ) {
     this.currentBook = [];
     storage.get('thisBookDetails').then(parameter => {
       this.currentBook = parameter;
+    });
+    storage.get('allBookDetails').then(param => {
+      this.allBookData = param;
     });
   }
 
@@ -61,6 +66,30 @@ export class ListingPage implements OnInit {
       })
       .catch((e: any) => console.log('Error is', e));
   }
+
+  async bookBorrow() {
+    const obj = await this.allBookData.find(
+      obj => obj.isbn == this.currentBook.isbn
+    );
+    let currentIndex = await this.allBookData.indexOf(obj);
+    this.allBookData[currentIndex].isAvailable = !this.allBookData[currentIndex]
+      .isAvailable;
+    await this.storage.set('allBookDetails', this.allBookData);
+    await this.storage.set('thisBookDetails', this.allBookData[currentIndex]);
+    await this.navController.navigateForward('/home');
+    // this.updateDetails(currentIndex);
+    // this.storage.get('thisBookDetails').then(parameter => {
+    //   this.currentBook = parameter;
+    // });
+  }
+
+  async updateDetails(index) {
+    await this.storage.set('allBookDetails', this.allBookData);
+    await this.storage.set('thisBookDetails', this.allBookData[index]);
+    await this.navController.navigateForward('/home');
+  }
+
+  bookReturn() {}
 
   ionViewDidLeave() {
     window.document

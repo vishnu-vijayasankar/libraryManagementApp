@@ -1,0 +1,25 @@
+{
+  "employee": [
+    {
+      "id": "136636",
+      "firstName": "Vishnu",
+      "lastName": "Vijayasankar",
+      "mail": "vishnu.vijayasankar@maybank.com",
+      "mobile": "7012630369"
+    },
+    {
+      "id": "136635",
+      "firstName": "Maria",
+      "lastName": "Sharapova",
+      "mail": "maria.sharapova@maybank.com",
+      "mobile": "9497305105"
+    },
+    {
+      "id": "136634",
+      "firstName": "James",
+      "lastName": "Bond",
+      "mail": "james.bond@maybank.com",
+      "mobile": "8893443995"
+    }
+  ]
+}

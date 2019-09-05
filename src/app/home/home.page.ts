@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import bookJson from '../../assets/books.json';
 import { NavController } from '@ionic/angular';
 import { SharedService } from '../shared.service.js';
 import { Storage } from '@ionic/storage';
@@ -22,12 +21,7 @@ export class HomePage implements OnInit {
     public shared: SharedService,
     public storage: Storage,
     private qrScanner: QRScanner
-  ) {
-    this.bookDetails = bookJson.books;
-    this.storage.set('allBookDetails', this.bookDetails);
-    this.bookDetailsTemp = this.bookDetails;
-    console.log(this.bookDetails);
-  }
+  ) {}
   ngOnInit() {
     this.setFilteredItems();
     window.document.querySelector('ion-app').classList.add('transparentBody');
@@ -79,6 +73,12 @@ export class HomePage implements OnInit {
         }
       })
       .catch((e: any) => console.log('Error is', e));
+  }
+
+  ionViewDidEnter() {
+    this.storage.get('allBookDetails').then(param => {
+      this.bookDetailsTemp = param;
+    });
   }
 
   ionViewDidLeave() {
