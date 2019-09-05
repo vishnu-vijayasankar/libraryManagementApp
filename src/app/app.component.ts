@@ -27,8 +27,12 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.bookDetails = bookJson.books;
-      this.storage.set('allBookDetails', this.bookDetails);
+      this.storage.get('allBookDetails').then(param => {
+        if (param == null) {
+          this.bookDetails = bookJson.books;
+          this.storage.set('allBookDetails', this.bookDetails);
+        }
+      });
     });
   }
 }
