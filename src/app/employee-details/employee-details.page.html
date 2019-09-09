@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Employee Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="fetchEmployee()">
+    <ion-item [class.ion-invalid]="true">
+      <ion-label>Employee ID: </ion-label>
+      <ion-input type="text" [(ngModel)]="empId" name="id"></ion-input>
+      <ion-button color="success" ion-button item-right type="submit"
+        >Verify</ion-button
+      >
+    </ion-item>
+  </form>
+  <form *ngIf="empBool">
+    <ion-item>
+      <ion-label class="ion-margin-end"
+        ><ion-icon name="person"></ion-icon
+      ></ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="empName"
+        readonly
+        name="name"
+      ></ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label class="ion-margin-end"
+        ><ion-icon name="mail"></ion-icon
+      ></ion-label>
+      <ion-textarea
+        type="text"
+        [(ngModel)]="empMail"
+        readonly
+        name="mail"
+      ></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-margin-end"
+        ><ion-icon name="call"></ion-icon
+      ></ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="empNum"
+        readonly
+        name="mobNum"
+      ></ion-input>
+    </ion-item>
+    <ion-button class="ion-margin-top" expand="block" (click)="updateBookData()"
+      >Confirm</ion-button
+    >
+  </form>
+</ion-content>

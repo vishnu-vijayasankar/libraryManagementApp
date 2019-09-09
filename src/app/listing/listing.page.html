@@ -35,7 +35,7 @@
     color="success"
     class="ion-float-right"
     *ngIf="currentBook.isAvailable"
-    (click)="bookBorrow()"
+    (click)="empPage()"
   >
     Borrow</ion-button
   >
@@ -43,7 +43,7 @@
     color="danger"
     class="ion-float-right"
     *ngIf="!currentBook.isAvailable"
-    (click)="bookReturn()"
+    (click)="empPage()"
   >
     Return</ion-button
   >

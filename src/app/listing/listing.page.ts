@@ -12,7 +12,7 @@ import { AlertController, NavController } from '@ionic/angular';
 export class ListingPage implements OnInit {
   currentBook: any;
   allBookData: any;
-  text: String;
+  text: string;
 
   constructor(
     public shared: SharedService,
@@ -67,21 +67,21 @@ export class ListingPage implements OnInit {
       .catch((e: any) => console.log('Error is', e));
   }
 
-  async bookBorrow() {
-    const obj = await this.allBookData.find(
-      obj => obj.isbn == this.currentBook.isbn
-    );
-    const currentIndex = await this.allBookData.indexOf(obj);
-    this.allBookData[currentIndex].isAvailable = !this.allBookData[currentIndex]
-      .isAvailable;
-    await this.storage.set('allBookDetails', this.allBookData);
-    await this.storage.set('thisBookDetails', this.allBookData[currentIndex]);
-    await this.navController.navigateForward('/home');
+  empPage() {
+    // const obj = await this.allBookData.find(
+    //   obj => obj.isbn == this.currentBook.isbn
+    // );
+    // const currentIndex = await this.allBookData.indexOf(obj);
+    // this.allBookData[currentIndex].isAvailable = !this.allBookData[currentIndex]
+    //   .isAvailable;
+    // await this.storage.set('allBookDetails', this.allBookData);
+    // await this.storage.set('thisBookDetails', this.allBookData[currentIndex]);
+    this.navController.navigateForward('/employee-details');
   }
 
-  async bookReturn() {
-    await this.bookBorrow();
-  }
+  // async bookReturn() {
+  //   await this.bookBorrow();
+  // }
 
   ionViewDidLeave() {
     window.document

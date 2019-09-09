@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Storage } from '@ionic/storage';
 import bookJson from '../assets/books.json';
+import empJson from '../assets/employee.json';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import bookJson from '../assets/books.json';
 })
 export class AppComponent {
   bookDetails = [];
+  empDetails = [];
 
   constructor(
     private platform: Platform,
@@ -31,6 +33,8 @@ export class AppComponent {
         if (param == null) {
           this.bookDetails = bookJson.books;
           this.storage.set('allBookDetails', this.bookDetails);
+          this.empDetails = empJson.employee;
+          this.storage.set('allEmpDetails', this.empDetails);
         }
       });
     });
