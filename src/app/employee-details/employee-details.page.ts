@@ -13,6 +13,7 @@ export class EmployeeDetailsPage implements OnInit {
   public empName: string;
   public empMail: string;
   public empNum: string;
+  public employee: string;
   public empBool = false;
   public showError = false;
   allBookData: any;
@@ -57,13 +58,14 @@ export class EmployeeDetailsPage implements OnInit {
     toast.present();
   }
 
-  async updateBookData() {
+  async updateBookData(employee) {
     const obj = await this.allBookData.find(
       obj => obj.isbn == this.currentBook.isbn
     );
     const currentIndex = await this.allBookData.indexOf(obj);
     this.allBookData[currentIndex].isAvailable = !this.allBookData[currentIndex]
       .isAvailable;
+    this.allBookData[currentIndex][employee] = this.empId;
     await this.storage.set('allBookDetails', this.allBookData);
     await this.storage.set('thisBookDetails', this.allBookData[currentIndex]);
     await this.navController.navigateForward('/home');

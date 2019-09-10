@@ -51,7 +51,18 @@
         name="mobNum"
       ></ion-input>
     </ion-item>
-    <ion-button class="ion-margin-top" expand="block" (click)="updateBookData()"
+    <ion-button
+      *ngIf="!currentBook.isAvailable"
+      class="ion-margin-top"
+      expand="block"
+      (click)="updateBookData('returnee')"
+      >Confirm</ion-button
+    >
+    <ion-button
+      *ngIf="currentBook.isAvailable"
+      class="ion-margin-top"
+      expand="block"
+      (click)="updateBookData('borrower')"
       >Confirm</ion-button
     >
   </form>

@@ -31,20 +31,48 @@
       <ion-label>{{ currentBook.website }}</ion-label>
     </ion-item>
   </ion-list>
-  <ion-button
-    color="success"
-    class="ion-float-right"
-    *ngIf="currentBook.isAvailable"
-    (click)="empPage()"
-  >
-    Borrow</ion-button
-  >
-  <ion-button
-    color="danger"
-    class="ion-float-right"
-    *ngIf="!currentBook.isAvailable"
-    (click)="empPage()"
-  >
-    Return</ion-button
-  >
+
+  <ion-list *ngIf="!currentBook.isAvailable">
+    <ion-item>
+      <ion-text color="danger">
+        <h5>Borrowed By:</h5>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ borrower.firstName }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ borrower.mail }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ borrower.mobile }}</ion-label>
+    </ion-item>
+    <ion-button
+      color="danger"
+      class="ion-float-right ion-margin-top"
+      (click)="empPage()"
+    >
+      Return</ion-button
+    >
+  </ion-list>
+
+  <ion-list *ngIf="currentBook.isAvailable">
+    <ion-item>
+      <ion-text color="success">
+        <h5>Returned By:</h5>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ returnee.firstName + ' ' + returnee.lastName }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ returnee.mail }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ returnee.mobile }}</ion-label>
+    </ion-item>
+    <ion-button color="success" class="ion-float-right" (click)="empPage()">
+      Borrow</ion-button
+    >
+  </ion-list>
 </ion-content>

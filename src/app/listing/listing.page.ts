@@ -13,6 +13,9 @@ export class ListingPage implements OnInit {
   currentBook: any;
   allBookData: any;
   text: string;
+  allEmpData: any;
+  borrower: any;
+  returnee: any;
 
   constructor(
     public shared: SharedService,
@@ -22,8 +25,19 @@ export class ListingPage implements OnInit {
     public navController: NavController
   ) {
     this.currentBook = [];
+    this.borrower = [];
+    this.returnee = [];
     storage.get('thisBookDetails').then(parameter => {
       this.currentBook = parameter;
+      storage.get('allEmpDetails').then(param => {
+        this.allEmpData = param;
+        this.borrower = this.allEmpData.find(
+          borrower => borrower.id == this.currentBook.borrower
+        );
+        this.returnee = this.allEmpData.find(
+          returnee => returnee.id == this.currentBook.returnee
+        );
+      });
     });
     storage.get('allBookDetails').then(param => {
       this.allBookData = param;
@@ -33,7 +47,7 @@ export class ListingPage implements OnInit {
   ngOnInit() {
     // this.currentBook = this.shared.thisBookDetails;
     // console.log(this.currentBook);
-    window.document.querySelector('ion-app').classList.add('transparentBody');
+    // window.document.querySelector('ion-app').classList.add('transparentBody');
   }
 
   scanBook() {
@@ -82,6 +96,8 @@ export class ListingPage implements OnInit {
   // async bookReturn() {
   //   await this.bookBorrow();
   // }
+
+  ionViewDidEnter() {}
 
   ionViewDidLeave() {
     window.document
