@@ -77,7 +77,8 @@ export class HomePage implements OnInit {
 
   ionViewDidEnter() {
     this.storage.get('allBookDetails').then(param => {
-      this.bookDetailsTemp = param;
+      this.bookDetails = param;
+      this.bookDetailsTemp = this.bookDetails;
     });
   }
 
