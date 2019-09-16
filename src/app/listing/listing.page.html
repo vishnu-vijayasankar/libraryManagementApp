@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Book Details</ion-title>
+  <ion-toolbar class="toolBar">
+    <ion-title><strong>Book Details</strong></ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
@@ -10,69 +10,69 @@
 <ion-content>
   <ion-list>
     <ion-item>
-      <ion-label>{{ currentBook.author }}</ion-label>
-    </ion-item>
-    <ion-item>
+      <strong class="labelTitle">Title:</strong>
       <ion-label>{{ currentBook.title }}</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label>{{ currentBook.published }}</ion-label>
+    <ion-item *ngIf="currentBook.author !== ''">
+      <strong class="labelTitle">Author:</strong>
+      <ion-label>{{ currentBook.author }}</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label>{{ currentBook.publisher }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ currentBook.pages }}</ion-label>
-    </ion-item>
-    <ion-item>
+    <!-- <ion-item>
       <ion-label>{{ currentBook.description }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ currentBook.website }}</ion-label>
+    </ion-item> -->
+    <ion-item *ngIf="currentBook.website !== ''">
+      <a (click)="loadWebsite()">View on goodreads</a>
     </ion-item>
   </ion-list>
+  <div *ngIf="currentBook.borrower !== '' || currentBook.returnee !== ''">
+    <ion-list *ngIf="!currentBook.isAvailable">
+      <ion-item>
+        <ion-text color="danger">
+          <h5 class="yellowText">Borrowed By:</h5>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ borrower.name }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ borrower.mail }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ borrower.mobile }}</ion-label>
+      </ion-item>
+      <ion-button
+        class="ion-float-right ion-margin-top returnBtn"
+        (click)="empPage()"
+      >
+        Return</ion-button
+      >
+    </ion-list>
 
-  <ion-list *ngIf="!currentBook.isAvailable">
-    <ion-item>
-      <ion-text color="danger">
-        <h5>Borrowed By:</h5>
-      </ion-text>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ borrower.firstName }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ borrower.mail }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ borrower.mobile }}</ion-label>
-    </ion-item>
-    <ion-button
-      color="danger"
-      class="ion-float-right ion-margin-top"
-      (click)="empPage()"
-    >
-      Return</ion-button
-    >
-  </ion-list>
-
-  <ion-list *ngIf="currentBook.isAvailable">
-    <ion-item>
-      <ion-text color="success">
-        <h5>Returned By:</h5>
-      </ion-text>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ returnee.firstName + ' ' + returnee.lastName }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ returnee.mail }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ returnee.mobile }}</ion-label>
-    </ion-item>
-    <ion-button color="success" class="ion-float-right" (click)="empPage()">
-      Borrow</ion-button
-    >
-  </ion-list>
+    <ion-list *ngIf="currentBook.isAvailable">
+      <ion-item>
+        <ion-text>
+          <h5 class="yellowText">Returned By:</h5>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ returnee.name }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ returnee.mail }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ returnee.mobile }}</ion-label>
+      </ion-item>
+      <ion-button class="ion-float-right borrowBtn" (click)="empPage()">
+        Borrow</ion-button
+      >
+    </ion-list>
+  </div>
+  <ion-button
+    *ngIf="currentBook.borrower === '' && currentBook.returnee === ''"
+    class="ion-float-right borrowBtn"
+    (click)="empPage()"
+  >
+    Borrow</ion-button
+  >
 </ion-content>

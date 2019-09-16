@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Employee Details</ion-title>
+  <ion-toolbar class="toolBar">
+    <ion-title><strong>Employee Details</strong></ion-title>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +12,7 @@
     <ion-item [class.ion-invalid]="true">
       <ion-label>Employee ID: </ion-label>
       <ion-input type="text" [(ngModel)]="empId" name="id"></ion-input>
-      <ion-button color="success" ion-button item-right type="submit"
+      <ion-button class="borrowBtn" ion-button item-right type="submit"
         >Verify</ion-button
       >
     </ion-item>
@@ -53,14 +53,14 @@
     </ion-item>
     <ion-button
       *ngIf="!currentBook.isAvailable"
-      class="ion-margin-top"
+      class="ion-margin-top returnBtn"
       expand="block"
       (click)="updateBookData('returnee')"
       >Confirm</ion-button
     >
     <ion-button
       *ngIf="currentBook.isAvailable"
-      class="ion-margin-top"
+      class="ion-margin-top borrowBtn"
       expand="block"
       (click)="updateBookData('borrower')"
       >Confirm</ion-button

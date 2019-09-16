@@ -97,6 +97,11 @@ export class ListingPage implements OnInit {
   //   await this.bookBorrow();
   // }
 
+  loadWebsite() {
+    window.open(this.currentBook.website, '_system', 'location=yes');
+    return false;
+  }
+
   ionViewDidEnter() {}
 
   ionViewDidLeave() {

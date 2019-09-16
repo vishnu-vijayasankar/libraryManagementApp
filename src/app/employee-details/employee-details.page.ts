@@ -42,7 +42,7 @@ export class EmployeeDetailsPage implements OnInit {
     const emp = this.allEmpData.find(emp => emp.id == this.empId);
     if (emp) {
       this.empBool = true;
-      this.empName = emp.firstName + ' ' + emp.lastName;
+      this.empName = emp.name;
       this.empMail = emp.mail;
       this.empNum = emp.mobile;
     } else {

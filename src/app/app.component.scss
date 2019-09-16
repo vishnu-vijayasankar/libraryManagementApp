@@ -1,6 +1,12 @@
 .transparentBody {
-    background: transparent !important;
+  background: transparent !important;
 }
 page-qr-scanner ion-content {
   background: transparent !important;
+}
+.header {
+  background-color: #ffc700;
+}
+.toolBar {
+  --background: #ffc700 !important;
 }
