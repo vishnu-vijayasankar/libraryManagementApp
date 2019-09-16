@@ -7,6 +7,8 @@
   --background: #ffc700;
   --color: #000000;
   font-weight: 900;
+  --background-hover: #000000;
+  --color-hover: #ffc700;
 }
 .header {
   background-color: #ffc700;
@@ -23,4 +25,14 @@
 }
 .titleWrap {
   display: flex;
+}
+.authorText {
+  font-weight: 600;
+  font-size: 14px;
+}
+.bookItem {
+  --padding-bottom: 3px;
+}
+.padTop2 {
+  padding-top: 3px;
 }

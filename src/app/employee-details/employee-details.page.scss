@@ -1,0 +1,21 @@
+.header {
+  background-color: #ffc700;
+}
+.toolBar {
+  --background: #ffc700 !important;
+  --color: #000000;
+}
+.returnBtn {
+  --background: #000000;
+  --color: #ffc700;
+  --background-hover: #ffc700;
+  --color-hover: #000000;
+  font-weight: 600;
+}
+.borrowBtn {
+  --background: #ffc700;
+  --color: #000000;
+  --background-hover: #000000;
+  --color-hover: #ffc700;
+  font-weight: 600;
+}

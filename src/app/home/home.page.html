@@ -32,8 +32,12 @@
     <ion-item
       *ngFor="let book of bookDetailsTemp; let i = index"
       (click)="showDetails(i)"
+      class="bookItem"
     >
-      {{ book.title }} -- {{ book.author }}
+      <span>
+        <span class="padTop2">{{ book.title }}</span> --
+        <i class="authorText padTop2">{{ book.author }}</i>
+      </span>
     </ion-item>
   </ion-list>
 </ion-content>
