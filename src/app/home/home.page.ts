@@ -13,9 +13,11 @@ export class HomePage implements OnInit {
   public searchTerm = '';
   public index: number;
   public text: any;
+  role: string;
 
   bookDetails = [];
   bookDetailsTemp = [];
+
   constructor(
     public navController: NavController,
     public shared: SharedService,
@@ -23,16 +25,23 @@ export class HomePage implements OnInit {
     private qrScanner: QRScanner
   ) {}
   ngOnInit() {
-    this.setFilteredItems();
+    const defaultRole = 'title';
+    this.setFilteredItems(defaultRole);
     window.document.querySelector('ion-app').classList.add('transparentBody');
   }
-  filterBooks(searchTerm) {
+  filterBooks(searchTerm, role) {
     return this.bookDetails.filter(book => {
-      return book.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+      return book[role].toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
     });
   }
-  setFilteredItems() {
-    this.bookDetailsTemp = this.filterBooks(this.searchTerm);
+  setFilteredItems(role) {
+    this.bookDetailsTemp = this.filterBooks(this.searchTerm, this.role);
+  }
+  authorRadio() {
+    this.role = 'author';
+  }
+  bookRadio() {
+    this.role = 'title';
   }
   async showDetails(index) {
     this.shared.thisBookDetails.push(this.bookDetailsTemp[index]);

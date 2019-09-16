@@ -9,6 +9,11 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./employee-details.page.scss']
 })
 export class EmployeeDetailsPage implements OnInit {
+  eventSource = [];
+  calendar = {
+    mode: 'month',
+    currentDate: new Date()
+  };
   public empId = '';
   public empName: string;
   public empMail: string;
@@ -66,6 +71,7 @@ export class EmployeeDetailsPage implements OnInit {
     this.allBookData[currentIndex].isAvailable = !this.allBookData[currentIndex]
       .isAvailable;
     this.allBookData[currentIndex][employee] = this.empId;
+    this.allBookData[currentIndex].borrowdate = this.calendar.currentDate;
     await this.storage.set('allBookDetails', this.allBookData);
     await this.storage.set('thisBookDetails', this.allBookData[currentIndex]);
     await this.navController.navigateForward('/home');

@@ -12,8 +12,21 @@
 <ion-content padding>
   <ion-searchbar
     [(ngModel)]="searchTerm"
-    (ionChange)="setFilteredItems()"
+    (ionChange)="setFilteredItems(role)"
   ></ion-searchbar>
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        Search By
+      </ion-list-header>
+      <ion-item>
+        <ion-radio value="author" (click)="authorRadio()"></ion-radio>
+        <ion-label>Author</ion-label>
+        <ion-radio value="title" (click)="bookRadio()"></ion-radio>
+        <ion-label>Book Name</ion-label>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
 
   <ion-list>
     <ion-item

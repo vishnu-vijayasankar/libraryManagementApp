@@ -12,7 +12,9 @@
       "website": "http://eloquentjavascript.net/",
       "isAvailable": false,
       "borrower": "136635",
-      "returnee": ""
+      "returnee": "",
+      "borrowdate": "",
+      "returndate": ""
     },
     {
       "isbn": "9781449331818",
@@ -26,7 +28,9 @@
       "website": "http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/",
       "isAvailable": true,
       "borrower": "",
-      "returnee": "136635"
+      "returnee": "136635",
+      "borrowdate": "",
+      "returndate": ""
     },
     {
       "isbn": "9781449365035",
@@ -40,7 +44,9 @@
       "website": "http://speakingjs.com/",
       "isAvailable": false,
       "borrower": "136634",
-      "returnee": ""
+      "returnee": "",
+      "borrowdate": "",
+      "returndate": ""
     },
     {
       "isbn": "9781491950296",
@@ -54,7 +60,9 @@
       "website": "http://chimera.labs.oreilly.com/books/1234000000262/index.html",
       "isAvailable": true,
       "borrower": "",
-      "returnee": "136634"
+      "returnee": "136634",
+      "borrowdate": "",
+      "returndate": ""
     },
     {
       "isbn": "9781593277574",
@@ -68,7 +76,9 @@
       "website": "https://leanpub.com/understandinges6/read",
       "isAvailable": false,
       "borrower": "136636",
-      "returnee": ""
+      "returnee": "",
+      "borrowdate": "",
+      "returndate": ""
     },
     {
       "isbn": "9781491904244",
@@ -82,7 +92,9 @@
       "website": "https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond",
       "isAvailable": true,
       "borrower": "",
-      "returnee": "136635"
+      "returnee": "136635",
+      "borrowdate": "",
+      "returndate": ""
     },
     {
       "isbn": "9781449325862",
@@ -96,7 +108,9 @@
       "website": "http://chimera.labs.oreilly.com/books/1230000000561/index.html",
       "isAvailable": false,
       "borrower": "136634",
-      "returnee": ""
+      "returnee": "",
+      "borrowdate": "",
+      "returndate": ""
     },
     {
       "isbn": "9781449337711",
@@ -110,7 +124,9 @@
       "website": "http://chimera.labs.oreilly.com/books/1234000001708/index.html",
       "isAvailable": true,
       "borrower": "",
-      "returnee": "136636"
+      "returnee": "136636",
+      "borrowdate": "",
+      "returndate": ""
     }
   ]
 }
