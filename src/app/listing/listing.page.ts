@@ -3,6 +3,7 @@ import { SharedService } from '../shared.service';
 import { Storage } from '@ionic/storage';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { AlertController, NavController } from '@ionic/angular';
+import moment from 'moment';
 
 @Component({
   selector: 'app-listing',
@@ -32,19 +33,14 @@ export class ListingPage implements OnInit {
     this.returnee = [];
     storage.get('thisBookDetails').then(parameter => {
       this.currentBook = parameter;
-      this.currentDate = this.currentBook.borrowdate;
-      this.formattedDate = this.currentDate.toDateString();
-      this.returnDate = new Date(
-        this.currentDate.setMonth(this.currentDate.getMonth() + 1)
-      ).toDateString();
 
       storage.get('allEmpDetails').then(param => {
         this.allEmpData = param;
         this.borrower = this.allEmpData.find(
-          borrower => borrower.id == this.currentBook.borrower
+          borrower => borrower.id === this.currentBook.borrower
         );
         this.returnee = this.allEmpData.find(
-          returnee => returnee.id == this.currentBook.returnee
+          returnee => returnee.id === this.currentBook.returnee
         );
       });
     });

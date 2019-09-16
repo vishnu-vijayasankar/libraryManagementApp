@@ -7,7 +7,7 @@
       "website": "https://www.goodreads.com/book/show/7977973-i-too-had-a-love-story?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
       "returnee": ""
     },
     {
@@ -17,7 +17,7 @@
       "website": "https://www.goodreads.com/book/show/13041934-can-love-happen-twice?from_search=true",
       "isAvailable": false,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
       "returnee": ""
     },
     {
@@ -27,7 +27,8 @@
       "website": "https://www.goodreads.com/book/show/18080597-like-it-happened-yesterday?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -37,7 +38,8 @@
       "website": "https://www.goodreads.com/book/show/23301981-your-dreams-are-mine-now?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -47,7 +49,8 @@
       "website": "https://www.goodreads.com/book/show/77203.The_Kite_Runner?from_search=true",
       "isAvailable": false,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -57,7 +60,8 @@
       "website": "https://www.goodreads.com/book/show/22874559-half-girlfriend?from_search=true",
       "isAvailable": false,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -67,7 +71,8 @@
       "website": "https://www.goodreads.com/book/show/8411750-she-broke-up-i-didn-t-i-just-kissed-someone-else?from_search=true",
       "isAvailable": false,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -76,7 +81,8 @@
       "author": "Durjoy Datta",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -86,7 +92,8 @@
       "website": "https://www.goodreads.com/book/show/12839937-you-were-my-crush-till-you-said-you-love-me?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -96,7 +103,8 @@
       "website": "https://www.goodreads.com/book/show/51077.The_Last_Song_of_Dusk?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -105,8 +113,9 @@
       "author": "Daman Singh",
       "website": "https://www.goodreads.com/book/show/8122987-nine-by-nine?from_search=true",
       "isAvailable": false,
-      "borrowdate": "",
+      "borrowDate": "",
       "borrower": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -116,7 +125,8 @@
       "website": "https://www.goodreads.com/book/show/36468655-anything-for-you-mam?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -125,8 +135,9 @@
       "author": "Shiv Khera",
       "website": "https://www.goodreads.com/book/show/714711.You_Can_Win?from_search=true",
       "isAvailable": false,
-      "borrowdate": "",
+      "borrowDate": "",
       "borrower": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -136,7 +147,8 @@
       "website": "https://www.goodreads.com/book/show/13553996-the-game-changers?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -146,7 +158,8 @@
       "website": "https://www.goodreads.com/book/show/759945.The_Magic_of_Thinking_Big?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -156,7 +169,8 @@
       "website": "https://apkpublishers.com/book-store/fiction/fall-apart-tonight/",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -165,8 +179,9 @@
       "author": "Shakuntala Devi",
       "website": "https://www.goodreads.com/book/show/18069480-more-puzzles-to-puzzle-you?from_search=true",
       "isAvailable": false,
-      "borrowdate": "",
+      "borrowDate": "",
       "borrower": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -176,7 +191,8 @@
       "website": "",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -186,7 +202,8 @@
       "website": "https://www.goodreads.com/book/show/694226._Godan_?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -196,7 +213,8 @@
       "website": "https://www.goodreads.com/book/show/37756471--01?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -205,7 +223,8 @@
       "author": "Harivansh Rai Bachchan",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -215,7 +234,8 @@
       "website": "https://www.goodreads.com/book/show/574783.UNIX_Concepts_and_Applications?ac=1&from_search=true",
       "isAvailable": false,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -224,8 +244,9 @@
       "author": "Alvin Toffler",
       "website": "https://www.goodreads.com/book/show/67490.Powershift?from_search=true",
       "isAvailable": false,
-      "borrowdate": "",
+      "borrowDate": "",
       "borrower": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -235,7 +256,8 @@
       "website": "https://www.goodreads.com/book/show/1920400.My_Life_in_My_Words?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -245,7 +267,8 @@
       "website": "https://www.goodreads.com/book/show/58696.David_Copperfield?from_search=true",
       "isAvailable": false,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     },
     {
@@ -255,7 +278,8 @@
       "website": "https://www.goodreads.com/book/show/665.The_Virtue_of_Selfishness?from_search=true",
       "isAvailable": true,
       "borrower": "",
-      "borrowdate": "",
+      "borrowDate": "",
+      "dueDate": "",
       "returnee": ""
     }
   ]

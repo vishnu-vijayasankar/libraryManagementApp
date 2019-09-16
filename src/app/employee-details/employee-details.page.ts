@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
+import moment from 'moment';
 
 @Component({
   selector: 'app-employee-details',
@@ -10,10 +11,11 @@ import { ToastController } from '@ionic/angular';
 })
 export class EmployeeDetailsPage implements OnInit {
   eventSource = [];
-  calendar = {
-    mode: 'month',
-    newDate: new Date()
-  };
+  // calendar = {
+  //   mode: 'month',
+  //   newDate: moment
+  // };
+  todayDate: any = moment();
   public empId = '';
   public empName: string;
   public empMail: string;
@@ -24,6 +26,8 @@ export class EmployeeDetailsPage implements OnInit {
   allBookData: any;
   allEmpData: any;
   currentBook: any;
+  formattedDate: string;
+  dueDate: string;
   constructor(
     public navController: NavController,
     public storage: Storage,
@@ -71,7 +75,12 @@ export class EmployeeDetailsPage implements OnInit {
     this.allBookData[currentIndex].isAvailable = !this.allBookData[currentIndex]
       .isAvailable;
     this.allBookData[currentIndex][employee] = this.empId;
-    this.allBookData[currentIndex].borrowdate = this.calendar.newDate;
+    this.formattedDate = moment(this.todayDate).format('DD-MM-YYYY');
+    this.dueDate = moment(this.todayDate)
+      .add(1, 'M')
+      .format('DD-MM-YYYY');
+    this.allBookData[currentIndex].borrowDate = this.formattedDate;
+    this.allBookData[currentIndex].dueDate = this.dueDate;
     await this.storage.set('allBookDetails', this.allBookData);
     await this.storage.set('thisBookDetails', this.allBookData[currentIndex]);
     await this.navController.navigateForward('/home');
