@@ -5,6 +5,8 @@ page-qr-scanner ion-content {
   background: transparent !important;
 }
 .labelTitle {
+  color: #000000;
+  font-weight: 600;
   margin-right: 5px;
 }
 .header {
@@ -13,6 +15,10 @@ page-qr-scanner ion-content {
 .toolBar {
   --background: #ffc700 !important;
   --color: #000000;
+
+  ion-title {
+    padding-left: 0;
+  }
 }
 .yellowText {
   color: #ffc700;
@@ -31,4 +37,8 @@ page-qr-scanner ion-content {
   --background-hover: #000000;
   --color-hover: #ffc700;
   font-weight: 600;
+}
+.viewLink {
+  cursor: pointer;
+  color: #ffc700;
 }

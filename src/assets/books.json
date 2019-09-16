@@ -152,7 +152,7 @@
     {
       "isbn": "MBB0058",
       "title": "Fall Apart Tonight",
-      "author": "Pratik Kotangale (ex-MBB Labs employee)",
+      "author": "Pratik Kotangale",
       "website": "https://apkpublishers.com/book-store/fiction/fall-apart-tonight/",
       "isAvailable": true,
       "borrower": "",
@@ -241,7 +241,7 @@
     {
       "isbn": "MBB0070",
       "title": "David Copperfield",
-      "author": "Charles Dickens, Jeremy Tambling (Introduction)",
+      "author": "Charles Dickens, Jeremy Tambling",
       "website": "https://www.goodreads.com/book/show/58696.David_Copperfield?from_search=true",
       "isAvailable": false,
       "borrower": "",
@@ -251,7 +251,7 @@
     {
       "isbn": "MBB0071",
       "title": "The Virtue of Selfishness: A New Concept of Egoism",
-      "author": "Ayn Rand, Nathaniel Branden (Contributor)",
+      "author": "Ayn Rand, Nathaniel Branden",
       "website": "https://www.goodreads.com/book/show/665.The_Virtue_of_Selfishness?from_search=true",
       "isAvailable": true,
       "borrower": "",

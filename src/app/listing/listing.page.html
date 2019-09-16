@@ -10,7 +10,7 @@
 <ion-content>
   <ion-list>
     <ion-item>
-      <strong class="labelTitle">Title:</strong>
+      <span class="labelTitle">Title:</span>
       <ion-label>{{ currentBook.title }}</ion-label>
     </ion-item>
     <ion-item *ngIf="currentBook.author !== ''">
@@ -21,7 +21,9 @@
       <ion-label>{{ currentBook.description }}</ion-label>
     </ion-item> -->
     <ion-item *ngIf="currentBook.website !== ''">
-      <a (click)="loadWebsite()">View on goodreads</a>
+      <a class="viewLink" (click)="loadWebsite()"
+        >Click here to view on goodreads</a
+      >
     </ion-item>
   </ion-list>
   <div *ngIf="currentBook.borrower !== '' || currentBook.returnee !== ''">
@@ -41,13 +43,7 @@
         <ion-label>{{ borrower.mobile }}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-text color="danger">
-          <h5>On:</h5>
-        </ion-text>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>{{ currentBook.borrowdate }}</ion-label>
+        <ion-label>Due date: {{ returnDate }}</ion-label>
       </ion-item>
       <ion-button
         class="ion-float-right ion-margin-top returnBtn"
@@ -72,13 +68,7 @@
         <ion-label>{{ returnee.mobile }}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-text color="success">
-          <h5>On:</h5>
-        </ion-text>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>{{ currentBook.borrowdate }}</ion-label>
+        <ion-label>Returned on: {{ formattedDate }}</ion-label>
       </ion-item>
       <ion-button class="ion-float-right borrowBtn" (click)="empPage()">
         Borrow</ion-button

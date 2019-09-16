@@ -13,7 +13,7 @@ export class HomePage implements OnInit {
   public searchTerm = '';
   public index: number;
   public text: any;
-  role: string;
+  role = 'title';
 
   bookDetails = [];
   bookDetailsTemp = [];
@@ -25,8 +25,8 @@ export class HomePage implements OnInit {
     private qrScanner: QRScanner
   ) {}
   ngOnInit() {
-    const defaultRole = 'title';
-    this.setFilteredItems(defaultRole);
+    // const defaultRole = 'title';
+    // this.setFilteredItems(defaultRole);
     window.document.querySelector('ion-app').classList.add('transparentBody');
   }
   filterBooks(searchTerm, role) {
@@ -37,11 +37,8 @@ export class HomePage implements OnInit {
   setFilteredItems(role) {
     this.bookDetailsTemp = this.filterBooks(this.searchTerm, this.role);
   }
-  authorRadio() {
-    this.role = 'author';
-  }
-  bookRadio() {
-    this.role = 'title';
+  roleChange(value) {
+    this.role = value;
   }
   async showDetails(index) {
     this.shared.thisBookDetails.push(this.bookDetailsTemp[index]);
@@ -95,5 +92,13 @@ export class HomePage implements OnInit {
     window.document
       .querySelector('ion-app')
       .classList.remove('transparentBody');
+  }
+  loadFeedback() {
+    window.open(
+      'https://forms.gle/Mih4QxNF5SFedp1H8',
+      '_system',
+      'location=yes'
+    );
+    return false;
   }
 }

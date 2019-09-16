@@ -12,7 +12,7 @@ export class EmployeeDetailsPage implements OnInit {
   eventSource = [];
   calendar = {
     mode: 'month',
-    currentDate: new Date()
+    newDate: new Date()
   };
   public empId = '';
   public empName: string;
@@ -71,7 +71,7 @@ export class EmployeeDetailsPage implements OnInit {
     this.allBookData[currentIndex].isAvailable = !this.allBookData[currentIndex]
       .isAvailable;
     this.allBookData[currentIndex][employee] = this.empId;
-    this.allBookData[currentIndex].borrowdate = this.calendar.currentDate;
+    this.allBookData[currentIndex].borrowdate = this.calendar.newDate;
     await this.storage.set('allBookDetails', this.allBookData);
     await this.storage.set('thisBookDetails', this.allBookData[currentIndex]);
     await this.navController.navigateForward('/home');

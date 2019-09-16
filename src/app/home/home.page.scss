@@ -27,12 +27,56 @@
   display: flex;
 }
 .authorText {
-  font-weight: 600;
+  display: block;
+  float: right;
+  font-weight: 500;
   font-size: 14px;
+  color: #ffc700;
+  text-align: right;
 }
 .bookItem {
   --padding-bottom: 3px;
 }
 .padTop2 {
   padding-top: 3px;
+}
+.radioBtn {
+  --color: #ffc700;
+  --color-checked: #ffc700;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.radioBtnGrp {
+  display: flex;
+  justify-content: center;
+
+  ion-label {
+    font-size: 15px;
+  }
+}
+.radioBtnLabel {
+  margin-right: 10px;
+}
+.searchTitle {
+  display: block;
+  margin-bottom: 10px;
+}
+.titleText {
+  display: block;
+  font-weight: 500;
+}
+.itemContainer {
+  width: 100%;
+}
+.feedbackContainer {
+  display: block;
+  overflow: hidden;
+}
+.feedbackLink {
+  float: right;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  cursor: pointer;
 }

@@ -4,6 +4,10 @@
 .toolBar {
   --background: #ffc700 !important;
   --color: #000000;
+
+  ion-title {
+    padding-left: 0;
+  }
 }
 .returnBtn {
   --background: #000000;

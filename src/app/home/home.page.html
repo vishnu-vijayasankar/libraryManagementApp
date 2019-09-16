@@ -10,23 +10,33 @@
 </ion-header>
 
 <ion-content padding>
+  <div class="feedbackContainer">
+    <a class="feedbackLink" (click)="loadFeedback()">Feedback</a>
+  </div>
+  <ion-list>
+    <strong class="searchTitle">
+      Search By:
+    </strong>
+    <ion-radio-group class="radioBtnGrp">
+      <ion-radio
+        value="title"
+        (ionSelect)="roleChange('title')"
+        class="radioBtn"
+        checked
+      ></ion-radio>
+      <ion-label class="radioBtnLabel">Book Name</ion-label>
+      <ion-radio
+        value="author"
+        (ionSelect)="roleChange('author')"
+        class="radioBtn"
+      ></ion-radio>
+      <ion-label>Author</ion-label>
+    </ion-radio-group>
+  </ion-list>
   <ion-searchbar
     [(ngModel)]="searchTerm"
     (ionChange)="setFilteredItems(role)"
   ></ion-searchbar>
-  <ion-list>
-    <ion-radio-group>
-      <ion-list-header>
-        Search By
-      </ion-list-header>
-      <ion-item>
-        <ion-radio value="author" (click)="authorRadio()"></ion-radio>
-        <ion-label>Author</ion-label>
-        <ion-radio value="title" (click)="bookRadio()"></ion-radio>
-        <ion-label>Book Name</ion-label>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
 
   <ion-list>
     <ion-item
@@ -34,10 +44,10 @@
       (click)="showDetails(i)"
       class="bookItem"
     >
-      <span>
-        <span class="padTop2">{{ book.title }}</span> --
-        <i class="authorText padTop2">{{ book.author }}</i>
-      </span>
+      <div class="itemContainer">
+        <span class="titleText padTop2">{{ book.title }}</span>
+        <i class="authorText padTop2">-- {{ book.author }}</i>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>

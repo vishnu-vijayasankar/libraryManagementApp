@@ -16,6 +16,9 @@ export class ListingPage implements OnInit {
   allEmpData: any;
   borrower: any;
   returnee: any;
+  returnDate: any;
+  currentDate: any;
+  formattedDate: any;
 
   constructor(
     public shared: SharedService,
@@ -29,6 +32,12 @@ export class ListingPage implements OnInit {
     this.returnee = [];
     storage.get('thisBookDetails').then(parameter => {
       this.currentBook = parameter;
+      this.currentDate = this.currentBook.borrowdate;
+      this.formattedDate = this.currentDate.toDateString();
+      this.returnDate = new Date(
+        this.currentDate.setMonth(this.currentDate.getMonth() + 1)
+      ).toDateString();
+
       storage.get('allEmpDetails').then(param => {
         this.allEmpData = param;
         this.borrower = this.allEmpData.find(
